@@ -1,5 +1,5 @@
 function zsh-ghq-skim() {
-  local target_dir=$(ghq list -p | sk)
+  local target_dir=$(ghq list -p | sk $LBUFFER)
 
   if [ -n "$target_dir" ]; then
     BUFFER="cd ${target_dir}"
@@ -8,5 +8,3 @@ function zsh-ghq-skim() {
 
   zle clear-screen
 }
-
-zsh-ghq-skim
